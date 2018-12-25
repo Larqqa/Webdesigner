@@ -1,0 +1,244 @@
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Serif");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono");
+@import url("https://fonts.googleapis.com/css?family=Bungee");
+@import url("https://fonts.googleapis.com/css?family=Monoton");
+@import url("https://fonts.googleapis.com/css?family=Creepster");
+.hide {
+  display: none;
+}
+
+.colorTester {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+}
+
+.colorTesting {
+  background: #fff;
+}
+
+.colorTesting .shade .Color {
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.colorTesting .shade .Color#colr1 {
+  background: #222;
+}
+
+.colorTesting .shade .Color#colr2 {
+  background: #444;
+}
+
+.colorTesting .shade .Color#colr3 {
+  background: #666;
+}
+
+.colorTesting .shade .Color#colr4 {
+  background: #888;
+}
+
+.colorTesting .shade .Color#colr5 {
+  background: #aaa;
+}
+
+.colorTesting .shade .Color#colr6 {
+  background: #ccc;
+}
+
+.colorTesting .shade .Color#colr7 {
+  background: #ddd;
+}
+
+.colorTesting .shade .Color#colr8 {
+  background: #fff;
+}
+
+.colorTesting .primary .Color {
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.colorTesting .primary .Color#colr1 {
+  background: #061933;
+}
+
+.colorTesting .primary .Color#colr2 {
+  background: #142f53;
+}
+
+.colorTesting .primary .Color#colr3 {
+  background: #2a4872;
+}
+
+.colorTesting .primary .Color#colr4 {
+  background: #3b5c88;
+}
+
+.colorTesting .primary .Color#colr5 {
+  background: #567cb0;
+}
+
+.colorTesting .primary .Color#colr6 {
+  background: #7d9dc9;
+}
+
+.colorTesting .primary .Color#colr7 {
+  background: #aebed5;
+}
+
+.colorTesting .primary .Color#colr8 {
+  background: #ebf1f8;
+}
+
+.colorTesting .accentTe .Color {
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.colorTesting .accentTe .Color#colr1 {
+  background: #073435;
+}
+
+.colorTesting .accentTe .Color#colr2 {
+  background: #14595a;
+}
+
+.colorTesting .accentTe .Color#colr3 {
+  background: #287172;
+}
+
+.colorTesting .accentTe .Color#colr4 {
+  background: #459c9d;
+}
+
+.colorTesting .accentTe .Color#colr5 {
+  background: #5dc7c8;
+}
+
+.colorTesting .accentTe .Color#colr6 {
+  background: #7fd1d2;
+}
+
+.colorTesting .accentTe .Color#colr7 {
+  background: #a8ddde;
+}
+
+.colorTesting .accentTe .Color#colr8 {
+  background: #e4f8f8;
+}
+
+.colorTesting .accentGe .Color {
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.colorTesting .accentGe .Color#colr1 {
+  background: #102c1b;
+}
+
+.colorTesting .accentGe .Color#colr2 {
+  background: #255538;
+}
+
+.colorTesting .accentGe .Color#colr3 {
+  background: #328353;
+}
+
+.colorTesting .accentGe .Color#colr4 {
+  background: #4bb074;
+}
+
+.colorTesting .accentGe .Color#colr5 {
+  background: #54d588;
+}
+
+.colorTesting .accentGe .Color#colr6 {
+  background: #6edc9a;
+}
+
+.colorTesting .accentGe .Color#colr7 {
+  background: #8ce5b0;
+}
+
+.colorTesting .accentGe .Color#colr8 {
+  background: #def4e7;
+}
+
+.colorTesting .accentYe .Color {
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.colorTesting .accentYe .Color#colr1 {
+  background: #555123;
+}
+
+.colorTesting .accentYe .Color#colr2 {
+  background: #8c863d;
+}
+
+.colorTesting .accentYe .Color#colr3 {
+  background: #aca44b;
+}
+
+.colorTesting .accentYe .Color#colr4 {
+  background: #e0d771;
+}
+
+.colorTesting .accentYe .Color#colr5 {
+  background: #f1e66c;
+}
+
+.colorTesting .accentYe .Color#colr6 {
+  background: #fff587;
+}
+
+.colorTesting .accentYe .Color#colr7 {
+  background: #fff8ac;
+}
+
+.colorTesting .accentYe .Color#colr8 {
+  background: #fffdeb;
+}
+
+.colorTesting .accentRe .Color {
+  min-width: 10px;
+  min-height: 10px;
+}
+
+.colorTesting .accentRe .Color#colr1 {
+  background: #491a15;
+}
+
+.colorTesting .accentRe .Color#colr2 {
+  background: #63251f;
+}
+
+.colorTesting .accentRe .Color#colr3 {
+  background: #883128;
+}
+
+.colorTesting .accentRe .Color#colr4 {
+  background: #a7392d;
+}
+
+.colorTesting .accentRe .Color#colr5 {
+  background: #bd4337;
+}
+
+.colorTesting .accentRe .Color#colr6 {
+  background: #d26d60;
+}
+
+.colorTesting .accentRe .Color#colr7 {
+  background: #d78378;
+}
+
+.colorTesting .accentRe .Color#colr8 {
+  background: #f6dcd9;
+}

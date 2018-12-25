@@ -1,0 +1,17 @@
+{
+  "name": "webdesignpractice",
+  "version": "1.0.0",
+  "description": "some shait",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "gulp"
+  },
+  "author": "Larqqa",
+  "license": "ISC",
+  "dependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-jade": "^1.1.0",
+    "gulp-sass": "^4.0.2"
+  }
+}

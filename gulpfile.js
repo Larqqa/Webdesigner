@@ -1,8 +1,9 @@
 const gulp = require('gulp'),
 sass = require('gulp-sass'),
-jade = require('gulp-jade'),
+pug = require('gulp-pug'),
 browserSync = require('browser-sync').create();
 
+// Swallow errors
 function swallowError(error) {
 
   // If you want details of the error in the console
@@ -12,7 +13,7 @@ function swallowError(error) {
 }
 
 // Compile Sass
-gulp.task('sass', function () {
+function compileSass(cb) {
   return gulp.src(['src/sass/*.sass', '!src/sass/functions.sass'])
   .pipe(sass({
     outputStyle: 'expanded',
@@ -20,49 +21,37 @@ gulp.task('sass', function () {
   .on('error', swallowError)
   .pipe(gulp.dest('main'))
   .pipe(browserSync.stream());
-});
+  cb();
+}
 
-/*
-// Compile Jade
-gulp.task('jade', function () {
-  return gulp.src(['src/jade/*.jade'])
-  .pipe(jade())
-  .on('error', swallowError)
-  .pipe(gulp.dest('src/html'))
-  .pipe(browserSync.stream());
-});
-*/
-gulp.task('jade', function () {
-  return gulp.src(['src/index.jade'])
-  .pipe(jade())
+// Compile Pug
+function compilePug(cb) {
+  return gulp.src(['src/index.pug'])
+  .pipe(pug())
   .on('error', swallowError)
   .pipe(gulp.dest('main'))
   .pipe(browserSync.stream());
-});
+  cb();
+}
 
-// Refresh on js save
-gulp.task('js', function () {
+// Refresh on JS save
+function compileJs(cb) {
   return gulp.src(['src/js/*.js'])
   .pipe(gulp.dest('main'))
   .pipe(browserSync.stream());
-});
+}
 
-// Watch & Serve
-gulp.task('serve', ['sass'], function () {
+// Default serve
+function serve(cb) {
   browserSync.init({
-      server: {
-          baseDir: "main"
-      }
+    server: {
+        baseDir: "main"
+    }
   });
+}
 
-  // Watch Sass
-  gulp.watch(['src/sass/*.sass'], ['sass']);
-  gulp.watch(['src/js/*.js'], ['js']);
-  //gulp.watch(['src/jade/*.jade'], ['jade']);
-  //gulp.watch(['src/jade/includes/*.jade'], ['jade']);
-  gulp.watch(['src/**/*.jade'], ['jade']);
-  gulp.watch("main/*.html").on('change', browserSync.reload);
-});
+gulp.watch(['src/sass/*.sass'], compileSass);
+gulp.watch(['src/**/*.pug'], compilePug);
+gulp.watch(['src/js/*.js'], compileJs);
 
-// Default
-gulp.task('default', ['serve']);
+exports.default = serve;

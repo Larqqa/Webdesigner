@@ -5,15 +5,15 @@ browserSync = require('browser-sync').create();
 
 // Swallow errors
 function swallowError(error) {
-
+  "use strict";
   // If you want details of the error in the console
   console.log(error.toString());
-
-  this.emit('end');
+  any.emit('end');
 }
 
 // Compile Sass
-function compileSass(cb) {
+function compileSass() {
+  "use strict";
   return gulp.src(['src/sass/*.sass', '!src/sass/functions.sass'])
   .pipe(sass({
     outputStyle: 'expanded',
@@ -21,28 +21,26 @@ function compileSass(cb) {
   .on('error', swallowError)
   .pipe(gulp.dest('main'))
   .pipe(browserSync.stream());
-  cb();
 }
 
 // Compile Pug
-function compilePug(cb) {
+function compilePug() {
   return gulp.src(['src/index.pug'])
   .pipe(pug())
   .on('error', swallowError)
   .pipe(gulp.dest('main'))
   .pipe(browserSync.stream());
-  cb();
 }
 
 // Refresh on JS save
-function compileJs(cb) {
+function compileJs() {
   return gulp.src(['src/js/*.js'])
   .pipe(gulp.dest('main'))
   .pipe(browserSync.stream());
 }
 
 // Default serve
-function serve(cb) {
+function serve() {
   browserSync.init({
     server: {
         baseDir: "main"

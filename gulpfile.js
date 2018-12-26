@@ -1,55 +1,60 @@
-const gulp        = require("gulp");
-const sass        = require("gulp-sass");
-const pug         = require("gulp-pug");
-const browserSync = require("browser-sync").create();
+"use strict";
+
+const {src, dest, watch} = require("gulp");
+const sass               = require("gulp-sass");
+const pug                = require("gulp-pug");
+const {stream, init}     = require("browser-sync").create();
 
 // Swallow errors
 function swallowError(error) {
-  "use strict";
   // If you want details of the error in the console
   console.log(error.toString());
   any.emit("end");
 }
 
-// Compile Sass
-function compileSass() {
-  "use strict";
-  return gulp.src(["src/sass/*.sass", "!src/sass/functions.sass"])
-  .pipe(sass({
-    outputStyle: "expanded",
-  }))
-  .on("error", swallowError)
-  .pipe(gulp.dest("main"))
-  .pipe(browserSync.stream());
-}
-
-// Compile Pug
-function compilePug() {
-  return gulp.src(["src/index.pug"])
-  .pipe(pug())
-  .on("error", swallowError)
-  .pipe(gulp.dest("main"))
-  .pipe(browserSync.stream());
-}
-
-// Refresh on JS save
-function compileJs() {
-  return gulp.src(["src/js/*.js"])
-  .pipe(gulp.dest("main"))
-  .pipe(browserSync.stream());
-}
-
 // Default serve
 function serve() {
-  browserSync.init({
+  // Create BrowserSync stream from main
+  init({
     server: {
         baseDir: "main"
     }
   });
 }
 
-gulp.watch(["src/sass/*.sass"], compileSass);
-gulp.watch(["src/**/*.pug"], compilePug);
-gulp.watch(["src/js/*.js"], compileJs);
+// Compile Sass
+function compileSass() {
+  return src(["src/sass/style.sass"])
+  .pipe(sass({
+    // For development
+    outputStyle: "expanded",
+  }))
+  .on("error", swallowError)
+  .pipe(dest("main"))
+  .pipe(stream());
+}
+
+// Compile Pug
+function compilePug() {
+  return src(["src/pug_main/*.pug"])
+  .pipe(pug({
+    // For development
+    pretty: true,
+  }))
+  .on("error", swallowError)
+  .pipe(dest("main"))
+  .pipe(stream());
+}
+
+// Refresh on JS save
+function compileJs() {
+  return src(["src/js/*.js"])
+  .pipe(dest("main"))
+  .pipe(stream());
+}
+
+watch(["src/sass/*.sass"], compileSass);
+watch(["src/**/*.pug"], compilePug);
+watch(["src/js/*.js"], compileJs);
 
 exports.default = serve;

@@ -1,41 +1,41 @@
-const gulp = require('gulp'),
-sass = require('gulp-sass'),
-pug = require('gulp-pug'),
-browserSync = require('browser-sync').create();
+const gulp        = require("gulp");
+const sass        = require("gulp-sass");
+const pug         = require("gulp-pug");
+const browserSync = require("browser-sync").create();
 
 // Swallow errors
 function swallowError(error) {
   "use strict";
   // If you want details of the error in the console
   console.log(error.toString());
-  any.emit('end');
+  any.emit("end");
 }
 
 // Compile Sass
 function compileSass() {
   "use strict";
-  return gulp.src(['src/sass/*.sass', '!src/sass/functions.sass'])
+  return gulp.src(["src/sass/*.sass", "!src/sass/functions.sass"])
   .pipe(sass({
-    outputStyle: 'expanded',
+    outputStyle: "expanded",
   }))
-  .on('error', swallowError)
-  .pipe(gulp.dest('main'))
+  .on("error", swallowError)
+  .pipe(gulp.dest("main"))
   .pipe(browserSync.stream());
 }
 
 // Compile Pug
 function compilePug() {
-  return gulp.src(['src/index.pug'])
+  return gulp.src(["src/index.pug"])
   .pipe(pug())
-  .on('error', swallowError)
-  .pipe(gulp.dest('main'))
+  .on("error", swallowError)
+  .pipe(gulp.dest("main"))
   .pipe(browserSync.stream());
 }
 
 // Refresh on JS save
 function compileJs() {
-  return gulp.src(['src/js/*.js'])
-  .pipe(gulp.dest('main'))
+  return gulp.src(["src/js/*.js"])
+  .pipe(gulp.dest("main"))
   .pipe(browserSync.stream());
 }
 
@@ -48,8 +48,8 @@ function serve() {
   });
 }
 
-gulp.watch(['src/sass/*.sass'], compileSass);
-gulp.watch(['src/**/*.pug'], compilePug);
-gulp.watch(['src/js/*.js'], compileJs);
+gulp.watch(["src/sass/*.sass"], compileSass);
+gulp.watch(["src/**/*.pug"], compilePug);
+gulp.watch(["src/js/*.js"], compileJs);
 
 exports.default = serve;

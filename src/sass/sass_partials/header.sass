@@ -1,0 +1,65 @@
+@import '../functions'
+.header
+  height: 70%
+  grid-area: header
+  background: $Primary0
+  overflow: hidden
+  position: relative
+
+  .headerImg
+    position: relative
+    background-position: 50% 50% !important
+    background-repeat: no-repeat !important
+    height: 100%
+    width: 100%
+
+  .heading
+    width: 100%
+    display: block
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+
+    h1
+      color: $AccentRe4
+      font-size: 6rem
+      font-family: $Primefont5
+      z-index: 1
+      position: relative
+      text-align: center
+      left: -3px
+      top: -3px
+      &.shadow
+        box-shadow: none !important
+        color: $AccentTe7
+        position: absolute
+        z-index: 0
+        text-align: center
+        margin: 0 auto
+        right: 0
+        bottom: 0
+        left: 3px
+        top: 3px
+    .subHeading
+      position: relative
+      h2
+        color: $AccentTe2
+        font-size: 2.5rem
+        font-family: $Primefont3
+        z-index: 1
+        position: relative
+        text-align: center
+        left: 0
+        top: 0
+        &.shadow
+          box-shadow: none !important
+          font-weight: 1000
+          color: $AccentTe8
+          position: absolute
+          z-index: 0
+          text-align: center
+          margin: 0 auto
+          right: 0
+          bottom: 0
+          left: 0
+          top: 0

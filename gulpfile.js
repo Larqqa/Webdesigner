@@ -53,7 +53,7 @@ function compileJs() {
   .pipe(stream());
 }
 
-watch(["src/sass/*.sass"], compileSass);
+watch(["src/sass/**/*.sass"], compileSass);
 watch(["src/**/*.pug"], compilePug);
 watch(["src/js/*.js"], compileJs);
 

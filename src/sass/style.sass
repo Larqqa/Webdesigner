@@ -1,5 +1,9 @@
 @import 'functions'
-@import 'colortester.sass'
+@import './sass_partials/colortester.sass'
+  
+//Utility
+.hide
+  display: none
 
 body
   background: $Primary0
@@ -10,81 +14,16 @@ body
 
   // Main
   .containerMain
-    .content
-      min-height: 100vh
-      display: grid
-      grid-template-columns: repeat(5, 1fr)
-      grid-template-rows: auto 1fr 15%
-      grid-template-areas: "header header header header header" "main main main main main" "footer footer footer footer footer"
+    @import './sass_partials/header.sass'
 
-    .header
-      grid-area: header
+    .content
+      z-index: 1
       background: $Primary0
       display: grid
-      grid-template-columns: 2fr 1fr
-      grid-template-rows: auto
-      grid-template-areas: "image heading"
-
-      img
-        grid-area: image
-        width: 100%
-        display: block
-
-      .heading
-        grid-area: heading
-        color: $AccentYe8
-        padding: $Padding5
-
-        h1
-          font-size: 6rem
-          font-family: $Primefont4
-          z-index: 1
-          position: relative
-          &.shadow
-            color: $AccentTe3
-            position: absolute
-            transform: translate(-1%, -106%)
-            z-index: 0
-        h2
-          color: $AccentRe5
-          font-size: 2.5rem
-          font-family: $Primefont3
-          z-index: 1
-          position: relative
-          &.shadow
-            color: $AccentRe1
-            position: absolute
-            transform: translate(-.5%, -110%)
-            z-index: 0
-
-
-    .contentMenu
-      grid-area: main / 1
-      background: $Primary8
-
-      a
-        margin: 0px
-        padding: $Padding3
-
-        &.active
-          border-radius: 0 5px 5px 0
-          background: $Primary5
-
-    .contentArea
-      grid-area: main / 2 / main / end
-      background: none
-      color: white
-      padding: $Padding3
-
-      p
-        -webkit-mask-image: -webkit-gradient(linear, left 0%, left 100%, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)))
-
-      &:hover
-        transition: 2s
-        color: black
-        background: $Shade8
-
-    footer.footer
-      grid-area: footer
-      color: $Primary1
-      background: $Primary3
+      grid-template-columns: repeat(5, 1fr)
+      grid-template-rows: auto auto
+      grid-template-areas: "main main main main main" "footer footer footer footer footer"
+      
+      @import './sass_partials/menu.sass'
+      @import './sass_partials/content.sass'
+      @import './sass_partials/footer.sass'

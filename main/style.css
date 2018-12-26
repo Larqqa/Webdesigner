@@ -8,14 +8,26 @@
 @import url("https://fonts.googleapis.com/css?family=Bungee");
 @import url("https://fonts.googleapis.com/css?family=Monoton");
 @import url("https://fonts.googleapis.com/css?family=Creepster");
-.hide {
-  display: none;
-}
-
-.hide {
-  display: none;
-}
-
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Serif");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono");
+@import url("https://fonts.googleapis.com/css?family=Bungee");
+@import url("https://fonts.googleapis.com/css?family=Monoton");
+@import url("https://fonts.googleapis.com/css?family=Creepster");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Serif");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono");
+@import url("https://fonts.googleapis.com/css?family=Bungee");
+@import url("https://fonts.googleapis.com/css?family=Monoton");
+@import url("https://fonts.googleapis.com/css?family=Creepster");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Serif");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono");
+@import url("https://fonts.googleapis.com/css?family=Bungee");
+@import url("https://fonts.googleapis.com/css?family=Monoton");
+@import url("https://fonts.googleapis.com/css?family=Creepster");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Serif");
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Mono");
+@import url("https://fonts.googleapis.com/css?family=Bungee");
+@import url("https://fonts.googleapis.com/css?family=Monoton");
+@import url("https://fonts.googleapis.com/css?family=Creepster");
 .colorTester {
   position: absolute;
   left: 0;
@@ -252,6 +264,10 @@
   background: #f6dcd9;
 }
 
+.hide {
+  display: none;
+}
+
 body {
   background: #030b17;
 }
@@ -260,97 +276,126 @@ body .sidebar {
   display: none;
 }
 
-body .containerMain .content {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: auto 1fr 15%;
-  grid-template-areas: "header header header header header" "main main main main main" "footer footer footer footer footer";
+body .containerMain {
 }
 
 body .containerMain .header {
+  height: 70%;
   grid-area: header;
   background: #030b17;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: auto;
-  grid-template-areas: "image heading";
-}
-
-body .containerMain .header img {
-  grid-area: image;
-  width: 100%;
-  display: block;
-}
-
-body .containerMain .header .heading {
-  grid-area: heading;
-  color: #fffdeb;
-  padding: 2rem;
-}
-
-body .containerMain .header .heading h1 {
-  font-size: 6rem;
-  font-family: "Monoton", cursive;
-  z-index: 1;
+  overflow: hidden;
   position: relative;
 }
 
-body .containerMain .header .heading h1.shadow {
-  color: #287172;
-  position: absolute;
-  transform: translate(-1%, -106%);
-  z-index: 0;
+body .containerMain .header .headerImg {
+  position: relative;
+  background-position: 50% 50% !important;
+  background-repeat: no-repeat !important;
+  height: 100%;
+  width: 100%;
 }
 
-body .containerMain .header .heading h2 {
-  color: #bd4337;
+body .containerMain .header .heading {
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+body .containerMain .header .heading h1 {
+  color: #a7392d;
+  font-size: 6rem;
+  font-family: "Creepster", cursive;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  left: -3px;
+  top: -3px;
+}
+
+body .containerMain .header .heading h1.shadow {
+  box-shadow: none !important;
+  color: #a8ddde;
+  position: absolute;
+  z-index: 0;
+  text-align: center;
+  margin: 0 auto;
+  right: 0;
+  bottom: 0;
+  left: 3px;
+  top: 3px;
+}
+
+body .containerMain .header .heading .subHeading {
+  position: relative;
+}
+
+body .containerMain .header .heading .subHeading h2 {
+  color: #14595a;
   font-size: 2.5rem;
   font-family: "Bungee", cursive;
   z-index: 1;
   position: relative;
+  text-align: center;
+  left: 0;
+  top: 0;
 }
 
-body .containerMain .header .heading h2.shadow {
-  color: #491a15;
+body .containerMain .header .heading .subHeading h2.shadow {
+  box-shadow: none !important;
+  font-weight: 1000;
+  color: #e4f8f8;
   position: absolute;
-  transform: translate(-0.5%, -110%);
   z-index: 0;
+  text-align: center;
+  margin: 0 auto;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
 }
 
-body .containerMain .contentMenu {
+body .containerMain .content {
+  z-index: 1;
+  background: #030b17;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto;
+  grid-template-areas: "main main main main main" "footer footer footer footer footer";
+}
+
+body .containerMain .content .contentMenu {
   grid-area: main / 1;
   background: #ebf1f8;
 }
 
-body .containerMain .contentMenu a {
+body .containerMain .content .contentMenu a {
   margin: 0px;
   padding: 1rem;
 }
 
-body .containerMain .contentMenu a.active {
+body .containerMain .content .contentMenu a.active {
   border-radius: 0 5px 5px 0;
   background: #567cb0;
 }
 
-body .containerMain .contentArea {
+body .containerMain .content .contentArea {
   grid-area: main / 2 / main / end;
   background: none;
   color: white;
   padding: 1rem;
 }
 
-body .containerMain .contentArea p {
-  -webkit-mask-image: -webkit-gradient(linear, left 0%, left 100%, from(black), to(rgba(0, 0, 0, 0)));
+body .containerMain .content .contentArea p {
+  color: #2a4872;
 }
 
-body .containerMain .contentArea:hover {
-  transition: 2s;
-  color: black;
-  background: #fff;
+body .containerMain .content .contentArea:hover {
+  color: #061933;
 }
 
-body .containerMain footer.footer {
+body .containerMain .content footer.footer {
   grid-area: footer;
   color: #061933;
   background: #2a4872;
